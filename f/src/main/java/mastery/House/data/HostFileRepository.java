@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class HostFileRepository {
+public class HostFileRepository implements HostRepository {
 
     private static final String Header = "id,last_name,email,phone address, city,state,postal_code,standard_rate, weekend_rate ";
     private final String filePath;
@@ -19,6 +19,7 @@ public class HostFileRepository {
 
     public HostFileRepository(String filePath) { this.filePath = filePath; }
 
+    @Override
     public List<Host> findAll() {
         ArrayList<Host> result = new ArrayList<>();
 
@@ -39,6 +40,7 @@ public class HostFileRepository {
     return result;
     }
 
+    @Override
     public Host findId(String id){
         return findAll().stream()
                 .filter(host ->host.getId().equalsIgnoreCase(id) )
@@ -47,6 +49,7 @@ public class HostFileRepository {
 
     }
 
+    @Override
     public List<Host> findbyPostalCode(String postal){
         List<Host> pew =  findAll().stream()
                 .filter(host -> host.getPostalCode().equalsIgnoreCase(postal))

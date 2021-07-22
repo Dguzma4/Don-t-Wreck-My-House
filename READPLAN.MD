@@ -47,37 +47,37 @@
 * ReservationFileRepository
 
 ###DataSteps
-* [ ] Create project DontWreckMyHouse
-* [ ] add jUnit to pom.xml
-* [ ] add package for models
-* [ ] Create Host,Guest,Reservation class's
-* [ ] Create GuestFileRepository,HostFileRepository, ReservationFileRepository
+* [x ] Create project DontWreckMyHouse
+* [ x] add jUnit to pom.xml
+* [ x] add package for models
+* [ x] Create Host,Guest,Reservation class's
+* [ x] Create GuestFileRepository,HostFileRepository, ReservationFileRepository
 
 
 ####ReservationFileRepository 
-* [ ] import the directory
+* [x] import the directory
 * [ ] FindReservationByStartDate
-* [ ] DeleteReservation
+* [x] DeleteReservation
 * [ ] findReservationByHostEmail
-* [ ] CreateReservation
+* [x] CreateReservation
 * [ ] UpdateReservation
-* [ ] WriteAll
-* [ ] serialize
-* [ ] deserialize
-* [ ] getFilePath perhaps it has an input of HostID find a easy way for them to get this
+* [x] WriteAll
+* [x] serialize
+* [x] deserialize
+* [x] getFilePath perhaps it has an input of HostID find a easy way for them to get this
 * um how do i get the file..... the names of the file reservations seem to just be the host id????
 #### GuestFileRepository
 
-* [ ] findAll 
-* [ ] findByiD
-* [ ] findByState
-* [ ] findByEmail
+* [x] findAll 
+* [x] findByiD
+* [x] findByState
+* [x] findByEmail
 
 
 #### HostFileRepository
-* [ ] findAll
-* [ ] findById
-* [ ] findByPostalCode
+* [x] findAll
+* [x] findById
+* [x] findByPostalCode
 
 
 ##### Potentially make a interface of People that contain both Guest and Hosts
@@ -90,20 +90,20 @@
   no overlapping reservation dates per location, Start date must before end date
 
 ### Domain Steps
-* [ ] Make ReservationService
-* [ ] Make *PersonService 
+* [x] Make ReservationService
+* [x] Make *PersonService 
 
 ####ReservationService
-* [ ] FindByHostId
-* [ ] FindByHostEmail
+* [x] FindByHostId
+* [x] FindByHostEmail
 * [ ] add
 * [ ] validates
 * [ ] delete 
 
 #### PersonService
-* [ ] FindByEmail
+* [x] FindByEmail
 * [ ] findByState
-* [ ] findByPostalCode
+* [x] findByPostalCode
 
 
 ##UI Layer
