@@ -1,6 +1,7 @@
 package mastery.House.models;
 
 import java.math.BigDecimal;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 public class Reservation {
@@ -67,5 +68,33 @@ public class Reservation {
 
     public void setTotal(BigDecimal total) {
         this.total = total;
+    }
+
+    public BigDecimal total(){
+        BigDecimal total = BigDecimal.ZERO;
+
+        LocalDate start = LocalDate.parse(startDate.toString());
+        LocalDate end = LocalDate.parse(endDate.toString());
+
+        BigDecimal weekDayPay = host.getStandardRate();
+        BigDecimal weekendDayPay = host.getWeekendRate();
+
+        while (start.compareTo(end)< 0){
+
+            if(start.getDayOfWeek() == DayOfWeek.FRIDAY || start.getDayOfWeek() == DayOfWeek.SATURDAY ||
+                    start.getDayOfWeek() == DayOfWeek.SUNDAY){
+                total = total.add(weekendDayPay);
+            } else {
+                total = total.add(weekDayPay);
+            }
+            start = startDate.plusDays(1);
+
+        }
+
+
+
+
+
+        return total;
     }
 }

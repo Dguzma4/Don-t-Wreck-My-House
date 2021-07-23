@@ -10,4 +10,6 @@ public interface HostRepository {
     Host findId(String id);
 
     List<Host> findbyPostalCode(String postal);
+
+    Host findByEmail(String email);
 }

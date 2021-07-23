@@ -50,6 +50,14 @@ public class HostFileRepository implements HostRepository {
     }
 
     @Override
+    public Host findByEmail(String email){
+        return findAll().stream()
+                .filter(host -> host.getEmail().equalsIgnoreCase(email))
+                .findFirst()
+                .orElse(null);
+    }
+
+    @Override
     public List<Host> findbyPostalCode(String postal){
         List<Host> pew =  findAll().stream()
                 .filter(host -> host.getPostalCode().equalsIgnoreCase(postal))

@@ -96,13 +96,13 @@
 ####ReservationService
 * [x] FindByHostId
 * [x] FindByHostEmail
-* [ ] add
-* [ ] validates
+* [x] add
+* [x] validates
 * [ ] delete 
 
 #### PersonService
 * [x] FindByEmail
-* [ ] findByState
+* [x] findByState
 * [x] findByPostalCode
 
 

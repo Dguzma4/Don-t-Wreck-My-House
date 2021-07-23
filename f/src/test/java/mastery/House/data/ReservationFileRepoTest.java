@@ -67,7 +67,7 @@ class ReservationFileRepoTest {
     public void shouldDelete() throws DataException {
         Host host = new Host();
         host.setId("f4d6c5e4-d207-4ce0-93b3-f1d1b397883c");
-        boolean actual = repo.deleteResById("2",host);
+        boolean actual = repo.deleteResById("3",host);
         assertTrue(actual);
     }
 
@@ -96,5 +96,7 @@ class ReservationFileRepoTest {
         boolean success = repo.update(res);
         assertTrue(success);
     }
+
+    //TODO: do the negative passes
 
 }

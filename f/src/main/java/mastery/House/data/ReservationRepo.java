@@ -15,4 +15,6 @@ public interface ReservationRepo {
     boolean update(Reservation res) throws DataException;
 
     boolean deleteResById(String resId, Host host) throws DataException;
+
+    int getMaxId(List <Reservation> all);
 }
