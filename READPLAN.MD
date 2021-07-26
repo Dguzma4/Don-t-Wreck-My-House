@@ -47,11 +47,11 @@
 * ReservationFileRepository
 
 ###DataSteps
-* [x ] Create project DontWreckMyHouse
-* [ x] add jUnit to pom.xml
-* [ x] add package for models
-* [ x] Create Host,Guest,Reservation class's
-* [ x] Create GuestFileRepository,HostFileRepository, ReservationFileRepository
+* [x] Create project DontWreckMyHouse
+* [x] add jUnit to pom.xml
+* [x] add package for models
+* [x] Create Host,Guest,Reservation class's
+* [x] Create GuestFileRepository,HostFileRepository, ReservationFileRepository
 
 
 ####ReservationFileRepository 
@@ -60,7 +60,7 @@
 * [x] DeleteReservation
 * [ ] findReservationByHostEmail
 * [x] CreateReservation
-* [ ] UpdateReservation
+* [x] UpdateReservation
 * [x] WriteAll
 * [x] serialize
 * [x] deserialize
@@ -114,20 +114,20 @@
 * view 
 
 ####ConsoleIO
-* [ ] readRequiredString
-* [ ] readString
-* [ ] readBoolean
-* [ ] readLocalDate
-* [ ] readBigDecimal
+* [x] readRequiredString
+* [x] readString
+* [x] readBoolean
+* [x] readLocalDate
+* [x] readBigDecimal
 
 
 ####Controller
-* [ ] run
-* [ ] run loop
-* [ ] ViewExistingReservationsForHost
-* [ ] CreateReservation
-* [ ] UpdateReservation
-* [ ] CancelReservation
+* [x] run
+* [x] run loop
+* [x] ViewExistingReservationsForHost
+* [x] CreateReservation
+* [x] UpdateReservation
+* [x] CancelReservation
 
 
 ##Test
@@ -138,4 +138,4 @@
 
 
 
-Steal get value from forages to get total -.-
+
