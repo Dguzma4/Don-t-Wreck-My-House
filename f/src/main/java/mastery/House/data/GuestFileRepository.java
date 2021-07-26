@@ -1,6 +1,7 @@
 package mastery.House.data;
 
 import mastery.House.models.Guest;
+import mastery.House.models.Host;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -57,6 +58,7 @@ public class GuestFileRepository implements GuestRepository {
                 .findFirst()
                 .orElse(null);
     }
+
 
     private Guest deserialize(String [] fields ){
         Guest result = new Guest();

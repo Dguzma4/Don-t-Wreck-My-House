@@ -23,6 +23,7 @@ private final ArrayList<Reservation> reservations = new ArrayList<>();
         Host host = new Host();
         host.setId("f4d6c5e4-d207-4ce0-93b3-f1d1b397883c");
         res.setHost(host);
+        host.setEmail("sbarrittrr@eventbrite.com");
 
         Guest guest = new Guest();
         guest.setGuestId("12345");

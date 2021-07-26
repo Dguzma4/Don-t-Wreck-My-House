@@ -44,6 +44,15 @@ public class ReservationService {
         return result;
     }
 
+    public List<Reservation> findReservationListByHostByHostEmail(String hostEmail){
+        Host host = hostRepository.findAll().stream()
+                .filter(host1 -> host1.getEmail().equalsIgnoreCase(hostEmail))
+                .findFirst()
+                .orElse(null);
+
+        return reservationRepo.findbyHostId(host.getId());
+    }
+
     public Reservation findByEmails(String guestEmail, String hostEmail) {
 
         Host host = hostRepository.findByEmail(hostEmail);
@@ -67,11 +76,26 @@ public class ReservationService {
         return result;
     }
 
+
+
     public Result<Reservation> update(Reservation reservation) throws DataException {
         Result<Reservation> result = validate(reservation);
         if (!result.isSuccess()) {
             return result;
         }
+
+      List<Reservation> pew = reservationRepo.findbyHostId(reservation.getHost().getId());
+
+      Reservation existing = pew.stream().
+              filter(reservation1 -> reservation1.getId().equalsIgnoreCase(reservation.getId()))
+              .findFirst()
+              .orElse(null);
+
+      if(!existing.getId().equals(reservation.getId()) || existing.getHost() != reservation.getHost()
+              || existing.getGuest() != reservation.getGuest() ){
+          result.addErrorMessage("You can only change start date/end date");
+      }
+
         boolean success = reservationRepo.update(reservation);
         if (!success) {
             result.addErrorMessage("Could not find reservaion id:" + reservation.getId());

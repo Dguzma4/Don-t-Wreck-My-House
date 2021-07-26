@@ -21,4 +21,6 @@ public class HostService {
         return repository.findbyPostalCode(postalCode);
     }
 
+    public  Host findByEmail (String email ){ return repository.findByEmail(email);}
+
 }

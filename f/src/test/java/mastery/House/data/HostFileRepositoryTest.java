@@ -45,4 +45,10 @@ class HostFileRepositoryTest {
         List<Host> host = repository.findbyPostalCode("89714");
         assertEquals(2,host.size());
     }
+
+    @Test
+    void shouldFindByEmail(){
+        Host host = repository.findByEmail("sbarrittrr@eventbrite.com");
+        assertEquals(host.getId(),"8248a3e0-ad7c-43c0-bebf-34745a07e99e");
+    }
 }

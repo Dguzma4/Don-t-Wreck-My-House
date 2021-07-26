@@ -16,6 +16,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.time.LocalDate;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -28,7 +29,13 @@ class ReservationServiceTest {
             new HostRepositoryDouble());
 
 
+@Test
+void shouldFindByHostId(){
+    String hostId = "f4d6c5e4-d207-4ce0-93b3-f1d1b397883c";
+    List<Reservation> pew = service.findByHostId("f4d6c5e4-d207-4ce0-93b3-f1d1b397883c");
 
+    assertNotNull(pew);
+}
     @Test
     void shouldAdd() throws DataException {
         Reservation res = new Reservation();
@@ -104,12 +111,37 @@ class ReservationServiceTest {
 
         result = service.add(res2);
 
-
-
         assertFalse(result.isSuccess());
         assertNull(result.getPayload());
         assertNotNull(result.getErrorMessages());
+    }
 
+    @Test
+    public void shouldUpdate() throws DataException {
+        Reservation res = new Reservation();
+        Host host = new Host();
+        host.setId("f4d6c5e4-d207-4ce0-93b3-f1d1b397883c");
+        res.setHost(host);
+        res.setId("2");
+        Guest guest = new Guest();
+        guest.setGuestId("956");
+        res.setGuest(guest);
+
+        res.setStartDate(LocalDate.of(2020,12,12));
+        res.setEndDate(LocalDate.of(2020,12,19));
+        res.setTotal(new BigDecimal(1547));
+        Result<Reservation>success = service.update(res);
+
+        assertFalse(success.isSuccess());
+
+
+    }
+    @Test
+    public void shouldFindResByHostEmail(){
+        String email = "sbarrittrr@eventbrite.com";
+
+        List<Reservation> reservation = service.findReservationListByHostByHostEmail(email);
+        assertNotNull(reservation);
 
     }
 

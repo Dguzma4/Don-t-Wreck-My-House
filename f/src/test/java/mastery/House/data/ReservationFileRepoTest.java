@@ -13,7 +13,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 import static java.lang.Integer.getInteger;
@@ -95,6 +94,11 @@ class ReservationFileRepoTest {
         res.setTotal(new BigDecimal(1547));
         boolean success = repo.update(res);
         assertTrue(success);
+    }
+
+    @Test
+   public void shouldFindByHostEmail(){
+
     }
 
     //TODO: do the negative passes

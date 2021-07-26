@@ -57,9 +57,7 @@ public class ReservationFileRepo implements ReservationRepo {
                 .collect(Collectors.toList());
     }
 
-//    public Reservation findResByGuests(Guest guest){
-//        return findbyHostId()
-//    }
+
 
     @Override
     public Reservation createReservation(Reservation res) throws DataException {
