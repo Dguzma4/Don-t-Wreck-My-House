@@ -2,24 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b228a594-3254-4ca9-a1c0-681de449bc35" name="Default Changelist" comment="thinkILostprogressfromnotCommitting">
-      <change afterPath="$PROJECT_DIR$/f/data/reservations/acb780c9-a2bd-4c58-b007-379200805cb1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/f/data/reservations/d63304e3-de36-4ecc-8f8f-847431ffff64.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/f/src/main/java/mastery/House/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/f/src/main/java/mastery/House/ui/ConsoleIO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/f/src/main/java/mastery/House/ui/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/f/src/main/java/mastery/House/ui/MainMenuOption.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/f/src/main/java/mastery/House/ui/View.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/f/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/f/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f/src/main/java/mastery/House/data/GuestFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/f/src/main/java/mastery/House/data/GuestFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f/src/main/java/mastery/House/data/ReservationFileRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/f/src/main/java/mastery/House/data/ReservationFileRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f/src/main/java/mastery/House/domain/HostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/f/src/main/java/mastery/House/domain/HostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/f/data/reservations/f4d6c5e4-d207-4ce0-93b3-f1d1b397883c.csv" beforeDir="false" afterPath="$PROJECT_DIR$/f/data/reservations/f4d6c5e4-d207-4ce0-93b3-f1d1b397883c.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/f/src/main/java/mastery/House/domain/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/f/src/main/java/mastery/House/domain/ReservationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f/src/main/java/mastery/House/models/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/f/src/main/java/mastery/House/models/Reservation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f/src/test/java/mastery/House/data/HostFileRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/f/src/test/java/mastery/House/data/HostFileRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f/src/test/java/mastery/House/data/ReservationFileRepoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/f/src/test/java/mastery/House/data/ReservationFileRepoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f/src/test/java/mastery/House/data/ReservationRepoDouble.java" beforeDir="false" afterPath="$PROJECT_DIR$/f/src/test/java/mastery/House/data/ReservationRepoDouble.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f/src/test/java/mastery/House/domain/ReservationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/f/src/test/java/mastery/House/domain/ReservationServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/f/src/main/java/mastery/House/ui/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/f/src/main/java/mastery/House/ui/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/f/src/main/java/mastery/House/ui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/f/src/main/java/mastery/House/ui/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -46,6 +46,7 @@ public class Controller {
                 case EXIT:
                     break;
                 case EDIT_RESERVATION:
+                    editReservations();
                     break;
                 case MAKE_RESERVATOIN:
                     makeReservation();
@@ -85,12 +86,11 @@ public class Controller {
 
     private void deleteReservation() throws DataException {
         view.displayHeader(MainMenuOption.DELETE_RESERVATOPM.getMessage());
-        String hostEmail = view.getHostId();
-        String guestEmail = view.getGuestEmail();
-        List<Reservation> res = reservationService.findReservationListByHostByHostEmail(hostEmail);
+        Host host = getHost();
+        List<Reservation> res = reservationService.findByHostId(host.getId());
         view.displayReservations(res);
         String resId = view.getResId(res);
-        Result<Reservation> result = reservationService.deleteResById(resId, hostService.findByEmail(hostEmail));
+        Result<Reservation> result = reservationService.deleteResById(resId, hostService.findbyId(host.getId()));
 
         if (!result.isSuccess()) {
             view.displayStatus(false, result.getErrorMessages());
@@ -102,10 +102,29 @@ public class Controller {
 
     private void showReservations() {
         view.displayHeader(MainMenuOption.VIEW_RESERVATIONS_FOR_HOST.getMessage());
-        String hostId = view.getHostId();
-        List<Reservation> reservations = reservationService.findByHostId(hostId);
+        Host host = getHost();
+        List<Reservation> reservations = reservationService.findByHostId(host.getId());
         view.displayReservations(reservations);
         view.enterToContinue();
+    }
+
+    private void editReservations() throws DataException {
+        view.displayHeader(MainMenuOption.EDIT_RESERVATION.getMessage());
+        Host host = getHost();
+        Guest guest = getGuest();
+        List<Reservation> reservations = reservationService.findByHostId(host.getId());
+        view.displayReservations(reservations);
+
+        Reservation updatedRes = view.updateReservation(reservations,guest,host);
+        Result<Reservation> result = reservationService.update(updatedRes);
+
+        if (!result.isSuccess()) {
+            view.displayStatus(false, result.getErrorMessages());
+        } else {
+            String successMessage = String.format("Reservation %s updated.", updatedRes.getId());
+            view.displayStatus(true, successMessage);
+        }
+
     }
 
 

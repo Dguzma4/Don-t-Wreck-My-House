@@ -24,18 +24,12 @@ public class View {
         int max = Integer.MIN_VALUE;
         for(MainMenuOption option: MainMenuOption.values()){
             io.printf("%s. %s%n", option.getValue(),option.getMessage());
-             min = Math.min(min, option.getValue());
              max = Math.max(max,option.getValue());
         }
         String message = String.format("Select [%s-%s]: ", 0, max - 1);
         return MainMenuOption.fromValue(io.readInt(message, 0, max));
     }
 
-    public String getHostforView(){
-        displayHeader(MainMenuOption.VIEW_RESERVATIONS_FOR_HOST.getMessage());
-        return io.readRequiredString("input the host email");
-
-    }
 
 //
 //    public Reservation chooseReservation(List<Reservation> reservationList){
@@ -69,17 +63,36 @@ public Reservation makeReservation(Host host, Guest guest) {
 
 }
 
-public BigDecimal getTotal (LocalDate startDate, LocalDate endDate, Host host){
+public Reservation updateReservation(List<Reservation> reservations, Guest guest, Host host){
+        Reservation reservation = reservations.stream()
+                .filter(reservation1 -> reservation1.getGuest().getGuestId().equalsIgnoreCase(guest.getGuestId()))
+                .findFirst()
+                .orElse(null);
+
+        if (reservation == null){
+            io.println("No reservation that exists to update.");
+            return reservation;
+        }
+
+        LocalDate newStartDate = (io.readLocalDate(reservation.getStartDate().toString()+ "Start date [MM/dd/yyyy] "));
+        LocalDate newEndDate = (io.readLocalDate(reservation.getEndDate().toString()+ "End date [MM/dd/yyy]"));
+
+        reservation.setStartDate(newStartDate);
+        reservation.setEndDate(newEndDate);
+        reservation.setTotal(getTotal(newStartDate,newEndDate,host));
+        return reservation;
+
+}
+
+public BigDecimal getTotal (LocalDate start, LocalDate end, Host host){
 
         BigDecimal total = BigDecimal.ZERO;
 
-        LocalDate start = LocalDate.parse(startDate.toString());
-        LocalDate end = LocalDate.parse(endDate.toString());
 
         BigDecimal weekDayPay = host.getStandardRate();
         BigDecimal weekendDayPay = host.getWeekendRate();
 
-        while (start.compareTo(end)< 0){
+        while (start.compareTo(end)<= 0){
 
             if(start.getDayOfWeek() == DayOfWeek.FRIDAY || start.getDayOfWeek() == DayOfWeek.SATURDAY ||
                     start.getDayOfWeek() == DayOfWeek.SUNDAY){
@@ -87,7 +100,8 @@ public BigDecimal getTotal (LocalDate startDate, LocalDate endDate, Host host){
             } else {
                 total = total.add(weekDayPay);
             }
-            start = startDate.plusDays(1);
+
+            start = start.plusDays(1);
 
         }
 

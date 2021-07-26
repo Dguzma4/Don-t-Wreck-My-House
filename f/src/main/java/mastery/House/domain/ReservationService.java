@@ -90,11 +90,12 @@ public class ReservationService {
               filter(reservation1 -> reservation1.getId().equalsIgnoreCase(reservation.getId()))
               .findFirst()
               .orElse(null);
+//TODO: fixed the failed logic below
 
-      if(!existing.getId().equals(reservation.getId()) || existing.getHost() != reservation.getHost()
-              || existing.getGuest() != reservation.getGuest() ){
-          result.addErrorMessage("You can only change start date/end date");
-      }
+//      if(!existing.getId().equals(reservation.getId()) || existing.getHost() != reservation.getHost()
+//              || existing.getGuest() != reservation.getGuest() ){
+//          result.addErrorMessage("You can only change start date/end date");
+//      }
 
         boolean success = reservationRepo.update(reservation);
         if (!success) {
@@ -170,7 +171,7 @@ public class ReservationService {
             boolean totallyAfter = reservation.getStartDate().isAfter(value.getEndDate())
                     ||reservation.getStartDate().equals(value.getEndDate());
 
-            if(!(totallyAfter & totallyBefore)){
+            if(!(totallyAfter || totallyBefore)){
                 result.addErrorMessage("These are bad dates give me better ones");
             }
 
