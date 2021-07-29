@@ -1,6 +1,8 @@
 package mastery.House.data;
 
 import mastery.House.models.Host;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Repository;
 
 import javax.imageio.IIOException;
 import java.io.BufferedReader;
@@ -11,13 +13,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
+@Repository
 public class HostFileRepository implements HostRepository {
 
     private static final String Header = "id,last_name,email,phone address, city,state,postal_code,standard_rate, weekend_rate ";
     private final String filePath;
 
 
-    public HostFileRepository(String filePath) { this.filePath = filePath; }
+    public HostFileRepository(@Value("./data/hosts.csv")String filePath) { this.filePath = filePath; }
 
     @Override
     public List<Host> findAll() {

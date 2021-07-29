@@ -25,7 +25,7 @@ class HostServiceTest {
 
     @Test
     public void shouldFindById(){
-    Host host = service.f("f4d6c5e4-d207-4ce0-93b3-f1d1b397883c");
+    Host host = service.findbyId("f4d6c5e4-d207-4ce0-93b3-f1d1b397883c");
 
     assertNotNull(host);
 

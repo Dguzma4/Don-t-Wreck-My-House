@@ -2,9 +2,10 @@ package mastery.House.domain;
 
 import mastery.House.data.HostRepository;
 import mastery.House.models.Host;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class HostService {
 
     private final HostRepository repository;

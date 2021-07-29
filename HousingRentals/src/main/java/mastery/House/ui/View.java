@@ -3,6 +3,7 @@ package mastery.House.ui;
 import mastery.House.models.Guest;
 import mastery.House.models.Host;
 import mastery.House.models.Reservation;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.time.DayOfWeek;
@@ -10,6 +11,8 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
+@Component
 public class View {
     private final ConsoleIO io;
 
@@ -92,7 +95,7 @@ public BigDecimal getTotal (LocalDate start, LocalDate end, Host host){
         BigDecimal weekDayPay = host.getStandardRate();
         BigDecimal weekendDayPay = host.getWeekendRate();
 
-        while (start.compareTo(end)<= 0){
+        while (start.compareTo(end)< 0){
 
             if(start.getDayOfWeek() == DayOfWeek.FRIDAY || start.getDayOfWeek() == DayOfWeek.SATURDAY ||
                     start.getDayOfWeek() == DayOfWeek.SUNDAY){

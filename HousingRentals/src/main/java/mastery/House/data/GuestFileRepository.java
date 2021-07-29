@@ -2,6 +2,8 @@ package mastery.House.data;
 
 import mastery.House.models.Guest;
 import mastery.House.models.Host;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Repository;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -9,12 +11,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+
+@Repository
 public class GuestFileRepository implements GuestRepository {
 
     private static final String Header = "guest_id,first_name,last_name,email,state";
     private final String filePath;
 
-    public GuestFileRepository(String filePath) {
+    public GuestFileRepository(@Value("./data/guests.csv")  String filePath) {
         this.filePath = filePath;
     }
 

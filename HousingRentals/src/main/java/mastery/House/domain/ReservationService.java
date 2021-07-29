@@ -7,11 +7,12 @@ import mastery.House.data.ReservationRepo;
 import mastery.House.models.Guest;
 import mastery.House.models.Host;
 import mastery.House.models.Reservation;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
+@Service
 public class ReservationService {
 
     private final ReservationRepo reservationRepo;

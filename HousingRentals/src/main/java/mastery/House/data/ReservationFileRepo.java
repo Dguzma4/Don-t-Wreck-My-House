@@ -3,6 +3,8 @@ package mastery.House.data;
 import mastery.House.models.Guest;
 import mastery.House.models.Host;
 import mastery.House.models.Reservation;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Repository;
 
 import java.io.*;
 import java.math.BigDecimal;
@@ -14,12 +16,15 @@ import java.util.stream.Collectors;
 
 import static java.lang.Integer.parseInt;
 
+
+
+@Repository
 public class ReservationFileRepo implements ReservationRepo {
 
     private static final String Header = "id,start_date,end_date,guest_id,total";
     private final String directory;
 
-    public ReservationFileRepo(String directory) {
+    public ReservationFileRepo(@Value("${reservationDirectory}") String directory) {
 
         this.directory = directory;
     }
@@ -88,8 +93,9 @@ public class ReservationFileRepo implements ReservationRepo {
         List<Reservation> all = findbyHostId(host.getId());
         for (int i = 0; i < all.size(); i++) {
             if (all.get(i).getId().equals(resId)) {
+
                 all.remove(i);
-                writeAll(all, all.get(i).getHost().getId());
+                writeAll(all, host.getId());
                 return true;
             }
         }

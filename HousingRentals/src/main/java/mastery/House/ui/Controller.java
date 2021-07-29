@@ -8,9 +8,12 @@ import mastery.House.domain.Result;
 import mastery.House.models.Guest;
 import mastery.House.models.Host;
 import mastery.House.models.Reservation;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+
+@Component
 public class Controller {
 
     private final ReservationService reservationService;
@@ -67,7 +70,8 @@ public class Controller {
         if (host == null) {
             return;
         }
-        view.displayReservations(reservationService.findByHostId(host.getId()));
+        List<Reservation> use = reservationService.findByHostId(host.getId());
+        view.displayReservations(use);
         Guest guest = getGuest();
         if (guest == null) {
             System.out.println("no guests here");
@@ -75,10 +79,12 @@ public class Controller {
         }
         view.displayReservations(reservationService.findByHostId(host.getId()));
         Reservation reservation = view.makeReservation(host, guest);
+
         Result<Reservation> result = reservationService.add(reservation);
         if (!result.isSuccess()) {
             view.displayStatus(false, result.getErrorMessages());
         } else {
+            view.displayReservations(use);
             String successMessage = String.format("Reservation %s created.", result.getPayload().getId());
             view.displayStatus(true, successMessage);
         }

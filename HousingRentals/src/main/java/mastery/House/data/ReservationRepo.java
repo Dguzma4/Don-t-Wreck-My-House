@@ -2,9 +2,13 @@ package mastery.House.data;
 
 import mastery.House.models.Host;
 import mastery.House.models.Reservation;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+
+
+@Repository
 public interface ReservationRepo {
     List<Reservation> findbyHostId(String hostId);
 
