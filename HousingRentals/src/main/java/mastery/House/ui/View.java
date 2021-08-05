@@ -128,6 +128,14 @@ public void displayReservations(List<Reservation> reservations){
     }
 
 
+
+
+}
+
+public  void displayNewReservation(Reservation reservation  ){
+    io.printf("%s %s %s %s %s %s %s %s %s %n", reservation.getId(), "Start date: ",
+            reservation.getStartDate(),"End date: ",reservation.getEndDate()
+            ,"Guest ID: ",reservation.getGuest().getGuestId(),"Total: " ,reservation.getTotal());
 }
     public void displayStatus(boolean success, String message) {
         displayStatus(success, List.of(message));

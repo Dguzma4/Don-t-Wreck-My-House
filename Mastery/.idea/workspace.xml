@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92853fac-440e-4082-85e8-49a2fa0c4c68" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../f/src/main/java/mastery/House/data/DataException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../f/src/main/java/mastery/House/data/ReservationFileRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../READPLAN.MD" beforeDir="false" afterPath="$PROJECT_DIR$/../READPLAN.MD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../f/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../f/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../f/src/main/java/mastery/House/data/GuestFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../f/src/main/java/mastery/House/data/GuestFileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pets/src/main/java/learn/pets/data/PetJdbcRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pets/src/main/java/learn/pets/data/PetJdbcTemplateRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pets/src/main/java/learn/pets/data/PetMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pets/src/main/java/learn/pets/data/PetRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pets/src/main/java/learn/pets/models/Pet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pets/src/test/java/learn/pets/data/DbTestConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pets/src/test/java/learn/pets/data/PetJdbcRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pets/src/test/java/learn/pets/data/PetJdbcTemplateRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +37,9 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -51,6 +50,7 @@
       <option name="presentableId" value="Default" />
       <updated>1626876903823</updated>
       <workItem from="1626876906185" duration="629000" />
+      <workItem from="1628183857371" duration="41000" />
     </task>
     <servers />
   </component>
@@ -67,5 +67,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

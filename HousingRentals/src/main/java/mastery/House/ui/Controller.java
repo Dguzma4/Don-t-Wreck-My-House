@@ -84,7 +84,7 @@ public class Controller {
         if (!result.isSuccess()) {
             view.displayStatus(false, result.getErrorMessages());
         } else {
-            view.displayReservations(use);
+            view.displayNewReservation(reservation);
             String successMessage = String.format("Reservation %s created.", result.getPayload().getId());
             view.displayStatus(true, successMessage);
         }
